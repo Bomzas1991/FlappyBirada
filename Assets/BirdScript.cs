@@ -12,6 +12,7 @@ public class BirdScript : MonoBehaviour
 
     public int Points;
     public TextMeshPro pointsText;
+    public AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,7 @@ public class BirdScript : MonoBehaviour
         {
             Points++;
             pointsText.text = Points.ToString();
+            AudioSource.PlayClipAtPoint(clip, transform.position, 1);
         }
     }
 }
