@@ -15,6 +15,12 @@ public class WallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * speed * Time.deltaTime;
+        float x = transform.position.x;
+
+        if (x <= -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
