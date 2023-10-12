@@ -5,11 +5,14 @@ using UnityEngine;
 public class WallScript : MonoBehaviour
 {
     public float speed;
+    public float startX;
+    public float endX;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0)).x;
+        startX = Camera.main.ViewportToWorldPoint(new Vector3(1, 0)).x;
     }
 
     // Update is called once per frame
