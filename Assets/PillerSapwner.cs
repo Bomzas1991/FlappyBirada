@@ -7,10 +7,44 @@ public class PillerSapwner : MonoBehaviour
     public GameObject Walls;
     float timer = 0;
 
+    public GameObject DayBg;
+    public GameObject NightBg;
+
+    public GameObject yellow;
+    public GameObject Blue;
+    public GameObject red;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        int dayOrNight = Random.Range(1, 3);
+
+        if (dayOrNight == 1)
+        {
+            DayBg.SetActive(true);
+        }
+
+        else if (dayOrNight == 2)
+        {
+            NightBg.SetActive(true);
+        }
+
+        int RedBlueOrYellow = Random.Range(1, 4);
+
+        if (RedBlueOrYellow == 1)
+        {
+            yellow.SetActive(true);
+        }
+
+        else if (RedBlueOrYellow == 2)
+        {
+            Blue.SetActive(true);
+        }
+
+        else if (RedBlueOrYellow == 3)
+        {
+            red.SetActive(true);
+        }
     }
 
     // Update is called once per frame

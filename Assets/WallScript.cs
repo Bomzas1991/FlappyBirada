@@ -11,6 +11,8 @@ public class WallScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 5;
+
         startX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0)).x;
         startX = Camera.main.ViewportToWorldPoint(new Vector3(1, 0)).x;
     }

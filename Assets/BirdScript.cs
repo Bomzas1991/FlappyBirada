@@ -14,6 +14,9 @@ public class BirdScript : MonoBehaviour
     public TextMeshPro pointsText;
     public AudioClip clip;
 
+    public WallScript wall;
+    public GameObject endGameScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,8 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             //transform.position += Vector3.up * height;
@@ -48,5 +53,23 @@ public class BirdScript : MonoBehaviour
             pointsText.text = Points.ToString();
             AudioSource.PlayClipAtPoint(clip, transform.position, 1);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Contains("Walls"))
+        {
+            WallScript Wall = wall.GetComponent<WallScript>();
+            Wall.speed = 0;
+            height = 0;
+
+            Invoke("ShowMenu", 0.5f);
+        }
+    }
+
+    void ShowMenu()
+    {
+        endGameScreen.SetActive(true);
+        pointsText.gameObject.SetActive(false);
     }
 }
