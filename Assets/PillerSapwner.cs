@@ -17,34 +17,8 @@ public class PillerSapwner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int dayOrNight = Random.Range(1, 3);
-
-        if (dayOrNight == 1)
-        {
-            DayBg.SetActive(true);
-        }
-
-        else if (dayOrNight == 2)
-        {
-            NightBg.SetActive(true);
-        }
-
-        int RedBlueOrYellow = Random.Range(1, 4);
-
-        if (RedBlueOrYellow == 1)
-        {
-            yellow.SetActive(true);
-        }
-
-        else if (RedBlueOrYellow == 2)
-        {
-            Blue.SetActive(true);
-        }
-
-        else if (RedBlueOrYellow == 3)
-        {
-            red.SetActive(true);
-        }
+        RedYellowBlue();
+        dayorNightt();
     }
 
     // Update is called once per frame
@@ -69,4 +43,41 @@ public class PillerSapwner : MonoBehaviour
         Instantiate(Walls, transform.position, transform.rotation);
     
     }
+
+    void dayorNightt()
+    {
+        int dayOrNight = Random.Range(1, 3);
+
+        if (dayOrNight == 1)
+        {
+            DayBg.SetActive(true);
+        }
+
+        else if (dayOrNight == 2)
+        {
+            NightBg.SetActive(true);
+        }
+
+    }
+
+    void RedYellowBlue()
+    {
+        int RedBlueOrYellow = Random.Range(1, 4);
+
+        if (RedBlueOrYellow == 1)
+        {
+            yellow.SetActive(true);
+        }
+
+        else if (RedBlueOrYellow == 2)
+        {
+            Blue.SetActive(true);
+        }
+
+        else if (RedBlueOrYellow == 3)
+        {
+            red.SetActive(true);
+        }
+    }
+
 }
